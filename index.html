@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bon Voyage, Arathi ✈️</title>
+  <meta name="description" content="A farewell tribute to Arathi — five beautiful years, countless memories, one incredible human." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600&family=Caveat:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- SECTION 1: BOARDING PASS LANDING           -->
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- Plane takeoff transition overlay -->
+  <div class="plane-transition" id="planeTransition">
+    <div class="pt-runway"></div>
+    <div class="pt-plane" id="ptPlane">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <!-- Fuselage -->
+        <ellipse cx="50" cy="52" rx="38" ry="11" fill="#fff"/>
+        <!-- Nose -->
+        <path d="M88 52 Q100 52 96 48 L88 44 Z" fill="#fff"/>
+        <!-- Tail fin -->
+        <path d="M14 52 Q10 40 18 38 L26 44 Z" fill="#fff"/>
+        <!-- Wings -->
+        <path d="M60 52 L80 30 L84 34 L68 52 Z" fill="#e0e0e0"/>
+        <path d="M60 52 L80 74 L84 70 L68 52 Z" fill="#e0e0e0"/>
+        <!-- Small rear wing -->
+        <path d="M22 50 L14 42 L16 40 L26 48 Z" fill="#e0e0e0"/>
+        <!-- Windows -->
+        <circle cx="70" cy="49" r="2.2" fill="#8B0000" opacity="0.6"/>
+        <circle cx="63" cy="49" r="2.2" fill="#8B0000" opacity="0.6"/>
+        <circle cx="56" cy="49" r="2.2" fill="#8B0000" opacity="0.6"/>
+        <!-- Red stripe -->
+        <path d="M20 55 L88 55 Q92 55 90 58 L20 58 Z" fill="#8B0000" opacity="0.5"/>
+      </svg>
+    </div>
+    <div class="pt-exhaust" id="ptExhaust"></div>
+    <div class="pt-clouds">
+      <div class="pt-cloud c1"></div>
+      <div class="pt-cloud c2"></div>
+      <div class="pt-cloud c3"></div>
+    </div>
+    <div class="pt-flash" id="ptFlash"></div>
+  </div>
+
+  <section id="landing" class="landing-section">
+    <div class="stars-bg"></div>
+    <div class="boarding-pass-wrapper" id="boardingPassWrapper">
+      <div class="boarding-pass" id="boardingPass">
+
+        <!-- ══ LEFT PANEL (dark maroon) ══ -->
+        <div class="bp-left">
+          <!-- Airline brand -->
+          <div class="bp-brand">
+            <div class="bp-oryx">🦅</div>
+            <div class="bp-brand-text">
+              <div class="bp-airline-name">Qatar Airways</div>
+              <div class="bp-tagline">Going Places Together</div>
+            </div>
+          </div>
+
+          <div class="bp-left-divider"></div>
+
+          <!-- Route -->
+          <div class="bp-route-row">
+            <div class="bp-city-block">
+              <div class="bp-iata">DOH</div>
+              <div class="bp-city-name">Doha</div>
+            </div>
+            <div class="bp-route-mid">
+              <div class="bp-route-line"></div>
+              <div class="bp-route-plane">✈</div>
+              <div class="bp-route-line"></div>
+            </div>
+            <div class="bp-city-block bp-city-right">
+              <div class="bp-iata">BOM</div>
+              <div class="bp-city-name">Mumbai</div>
+            </div>
+          </div>
+
+          <div class="bp-left-divider"></div>
+
+          <!-- Passenger info grid -->
+          <div class="bp-info-grid">
+            <div class="bp-info-cell">
+              <div class="bp-label">PASSENGER NAME</div>
+              <div class="bp-val">Arathi Ramesh</div>
+            </div>
+            <div class="bp-info-cell">
+              <div class="bp-label">CLASS</div>
+              <div class="bp-val">Business</div>
+            </div>
+            <div class="bp-info-cell">
+              <div class="bp-label">FLIGHT</div>
+              <div class="bp-val">QR 546</div>
+            </div>
+            <div class="bp-info-cell">
+              <div class="bp-label">DATE</div>
+              <div class="bp-val">11 APR 26</div>
+            </div>
+            <div class="bp-info-cell">
+              <div class="bp-label">DEPARTS</div>
+              <div class="bp-val">22:30</div>
+            </div>
+            <div class="bp-info-cell">
+              <div class="bp-label">GATE</div>
+              <div class="bp-val">G7</div>
+            </div>
+          </div>
+
+          <!-- Barcode -->
+          <div class="bp-barcode-wrap">
+            <div class="barcode-lines" id="barcodeLines"></div>
+          </div>
+
+          <button class="bp-cta" id="boardingBtn">Board the Memories ✨</button>
+        </div>
+
+        <!-- ══ TEAR PERFORATION ══ -->
+        <div class="bp-tear">
+          <div class="bp-tear-circle top"></div>
+          <div class="bp-tear-dots"></div>
+          <div class="bp-tear-circle bot"></div>
+        </div>
+
+        <!-- ══ RIGHT STUB (cream / light) ══ -->
+        <div class="bp-right">
+          <div class="bp-stub-brand">
+            <div class="bp-stub-oryx">🦅</div>
+            <div class="bp-stub-airline">Qatar Airways</div>
+          </div>
+          <div class="bp-stub-iata">DOH→BOM</div>
+          <div class="bp-stub-row">
+            <div class="bp-label dark-label">PASSENGER</div>
+            <div class="bp-stub-val">Arathi Ramesh</div>
+          </div>
+          <div class="bp-stub-row">
+            <div class="bp-label dark-label">SEAT</div>
+            <div class="bp-stub-val big">1A</div>
+          </div>
+          <div class="bp-stub-row">
+            <div class="bp-label dark-label">FLIGHT</div>
+            <div class="bp-stub-val">QR 546</div>
+          </div>
+          <div class="bp-stub-row">
+            <div class="bp-label dark-label">GATE</div>
+            <div class="bp-stub-val">G7</div>
+          </div>
+          <div class="bp-stub-badge">BOARDING PASS</div>
+          <div class="bp-stub-edition">✦ Farewell Edition ✦</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Music overlay -->
+    <div class="music-overlay" id="musicOverlay">
+      <div class="music-overlay-content">
+        <div class="music-note-anim">♪ ♫ ♪</div>
+        <h2>A little surprise for you, Arathi 🌸</h2>
+        <p>Press play to start your farewell journey</p>
+        <button class="play-music-btn" id="playMusicBtn">▶ &nbsp; Play Music &amp; Begin</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Background audio -->
+  <audio id="bgMusic" loop src="ponnu website song.mp3"></audio>
+
+  <!-- Floating Mute Button -->
+  <button class="mute-btn" id="muteBtn" title="Mute / Unmute music">
+    <span class="mute-icon" id="muteIcon">🔊</span>
+  </button>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- SECTION 2: NETFLIX-STYLE EPISODES          -->
+  <!-- ═══════════════════════════════════════════ -->
+  <section id="netflix" class="netflix-section hidden-section">
+    <div class="netflix-bg-overlay"></div>
+    <div class="netflix-inner">
+      <div class="netflix-header">
+        <div class="netflix-eyebrow">THE ARATHI CHRONICLES</div>
+        <h1 class="netflix-title">5 Years. 1 Incredible Human.</h1>
+        <p class="netflix-subtitle">A limited series. Already the best thing we've ever watched.</p>
+      </div>
+
+      <div class="episodes-shelf">
+
+        <div class="episode-card blurred-ep">
+          <div class="ep-thumbnail ep-thumb-1"></div>
+          <div class="ep-overlay">
+            <span class="ep-number">EP 01</span>
+            <span class="ep-title">The Arrival</span>
+            <span class="ep-blur-msg">Year 1 — The beginning 🌟</span>
+          </div>
+        </div>
+
+        <div class="episode-card blurred-ep">
+          <div class="ep-thumbnail ep-thumb-2"></div>
+          <div class="ep-overlay">
+            <span class="ep-number">EP 02</span>
+            <span class="ep-title">The Deep Dives</span>
+            <span class="ep-blur-msg">Year 2 & 3 — Getting closer 💫</span>
+          </div>
+        </div>
+
+        <div class="episode-card blurred-ep">
+          <div class="ep-thumbnail ep-thumb-3"></div>
+          <div class="ep-overlay">
+            <span class="ep-number">EP 03</span>
+            <span class="ep-title">The Golden Era</span>
+            <span class="ep-blur-msg">Year 4 — Peak us 🏆</span>
+          </div>
+        </div>
+
+        <div class="episode-card featured-ep" id="ep4Card">
+          <div class="ep-thumbnail ep-thumb-4"></div>
+          <div class="ep-glow-ring"></div>
+          <div class="ep-overlay ep-overlay-featured">
+            <span class="ep-number ep-number-featured">EP 04</span>
+            <span class="ep-title ep-title-featured">Lachuszz</span>
+            <span class="ep-desc">The memories you made. The love you left. Now playing. 🎬</span>
+            <button class="ep-play-btn" id="ep4PlayBtn">▶ Watch Now</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- SECTION 3: MEMORY LANE GRID                -->
+  <!-- ═══════════════════════════════════════════ -->
+  <section id="memories" class="memories-section hidden-section">
+    <div class="memories-header">
+      <div class="memories-eyebrow">MEMORY LANE</div>
+      <h2 class="memories-title">Every moment we never want to forget</h2>
+    </div>
+    <div class="memory-grid" id="memoryGrid">
+      <!-- Populated by JS -->
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- SECTION 4: VOICE NOTES                     -->
+  <!-- ═══════════════════════════════════════════ -->
+  <section id="voicenotes" class="voicenotes-section hidden-section">
+    <div class="voicenotes-inner">
+      <div class="voicenotes-header">
+        <div class="memories-eyebrow">VOICE MESSAGES</div>
+        <h2 class="memories-title">Words from the heart 💌</h2>
+        <p class="vn-subtitle">Tap play to hear what they had to say</p>
+      </div>
+
+      <!-- Instagram DM Window -->
+      <div class="ig-window">
+
+        <!-- IG Top Bar -->
+        <div class="ig-topbar">
+          <button class="ig-back">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <div class="ig-topbar-center">
+            <div class="ig-story-ring">
+              <div class="ig-topbar-avatar">A</div>
+            </div>
+            <div class="ig-topbar-info">
+              <div class="ig-topbar-name">arathiii.r</div>
+              <div class="ig-topbar-sub">Arathi Ramesh · Active now</div>
+            </div>
+          </div>
+          <div class="ig-topbar-actions">
+            <button class="ig-icon-btn">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 .01h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+            </button>
+            <button class="ig-icon-btn">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- IG Messages -->
+        <div class="ig-messages">
+
+          <!-- Date separator -->
+          <div class="ig-date-sep">Today</div>
+
+          <!-- Dayana's message (received — left) -->
+          <div class="ig-msg-group ig-received">
+            <div class="ig-avatar-col">
+              <div class="ig-msg-avatar" style="background: linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);">D</div>
+            </div>
+            <div class="ig-bubbles-col">
+              <div class="ig-username">dayana 💜</div>
+              <div class="ig-bubble ig-bubble-recv voice-bubble" id="dayanaBubble">
+                <div class="voice-player" id="dayanaPlayer">
+                  <button class="voice-play-btn ig-play-btn" id="dayanaPlayBtn">
+                    <span class="play-icon">▶</span>
+                  </button>
+                  <div class="voice-waveform">
+                    <div class="waveform-bars" id="dayanaWave"></div>
+                  </div>
+                  <div class="voice-duration" id="dayanaDur">0:00</div>
+                </div>
+              </div>
+              <div class="ig-caption-recv">"Ponnu, this is from me..." 🎙️</div>
+            </div>
+          </div>
+
+          <!-- Asma's message (sent — right) -->
+          <div class="ig-msg-group ig-sent">
+            <div class="ig-bubbles-col ig-bubbles-right">
+              <div class="ig-username ig-username-right">asma 🩷</div>
+              <div class="ig-bubble ig-bubble-sent voice-bubble" id="asmaBubble">
+                <div class="voice-player" id="asmaPlayer">
+                  <button class="voice-play-btn ig-play-btn ig-play-sent" id="asmaPlayBtn">
+                    <span class="play-icon">▶</span>
+                  </button>
+                  <div class="voice-waveform">
+                    <div class="waveform-bars" id="asmaWave"></div>
+                  </div>
+                  <div class="voice-duration ig-dur-sent" id="asmaDur">0:00</div>
+                </div>
+              </div>
+              <div class="ig-seen">Seen ✓✓</div>
+            </div>
+          </div>
+
+          <!-- Closing heart reaction -->
+          <div class="ig-heart-reaction">
+            <div class="ig-heart-bubble">We love you more than words can say 🤍</div>
+          </div>
+
+        </div>
+
+        <!-- IG Input Bar (decorative) -->
+        <div class="ig-input-bar">
+          <button class="ig-input-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          </button>
+          <div class="ig-input-field">Message...</div>
+          <div class="ig-input-right">
+            <button class="ig-input-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            </button>
+            <button class="ig-input-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 013 3v6a3 3 0 01-6 0V5a3 3 0 013-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+            </button>
+          </div>
+        </div>
+
+      </div><!-- end ig-window -->
+    </div>
+  </section>
+
+  <!-- Hidden audio elements for voice notes -->
+  <audio id="dayanaAudio" src="dayana voice note.m4a" preload="metadata"></audio>
+  <audio id="asmaAudio" src="asma voice note.m4a" preload="metadata"></audio>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- SECTION 5: TIME APART TRACKER              -->
+  <!-- ═══════════════════════════════════════════ -->
+  <section id="countdown" class="countdown-section hidden-section">
+    <div class="countdown-inner">
+      <div class="countdown-stars"></div>
+      <div class="memories-eyebrow" style="color:#D4AF37;">SINCE YOU LEFT US</div>
+      <h2 class="countdown-title">Time apart... but never apart in heart</h2>
+      <p class="countdown-subtitle">Counting every second since April 11, 2026 at 11:30 PM</p>
+      <div class="time-tracker" id="timeTracker">
+        <div class="time-block">
+          <div class="time-value" id="tMonths">00</div>
+          <div class="time-label">Months</div>
+        </div>
+        <div class="time-sep">:</div>
+        <div class="time-block">
+          <div class="time-value" id="tDays">00</div>
+          <div class="time-label">Days</div>
+        </div>
+        <div class="time-sep">:</div>
+        <div class="time-block">
+          <div class="time-value" id="tHours">00</div>
+          <div class="time-label">Hours</div>
+        </div>
+        <div class="time-sep">:</div>
+        <div class="time-block">
+          <div class="time-value" id="tMinutes">00</div>
+          <div class="time-label">Minutes</div>
+        </div>
+        <div class="time-sep">:</div>
+        <div class="time-block">
+          <div class="time-value" id="tSeconds">00</div>
+          <div class="time-label">Seconds</div>
+        </div>
+      </div>
+      <p class="countdown-love">No matter the distance, you're always with us 🌙</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- SECTION 6: FINAL DOWNLOAD / OUTRO          -->
+  <!-- ═══════════════════════════════════════════ -->
+  <section id="outro" class="outro-section hidden-section">
+    <div class="outro-inner">
+      <div class="outro-fireworks" id="fireworks"></div>
+      <div class="outro-content">
+        <div class="outro-emoji">✈️</div>
+        <h2 class="outro-title">Bon Voyage, Arathi</h2>
+        <p class="outro-subtitle">
+          Five years of laughter, midnight conversations, shared meals,<br/>
+          bad days turned good, and memories we'll carry forever.<br/><br/>
+          <span class="handwritten">Go show the world what we already know — you're extraordinary. 🌸</span>
+        </p>
+        <div class="outro-signatures">
+          <div class="sig-card">
+            <div class="handwritten sig-text">With all my love,</div>
+            <div class="sig-name">Dayana 💜</div>
+          </div>
+          <div class="sig-heart">🤍</div>
+          <div class="sig-card">
+            <div class="handwritten sig-text">Always in my heart,</div>
+            <div class="sig-name">Asma 🩷</div>
+          </div>
+        </div>
+        <div class="download-section">
+          <p class="download-label">Take all the memories with you</p>
+          <a href="memories.zip" class="download-btn" id="downloadBtn" download>
+            <span class="download-icon">⬇</span>
+            Download All Memories
+          </a>
+          <p class="download-note">* Contains all photos &amp; videos from this page</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">✕</button>
+    <div class="lightbox-media" id="lightboxMedia"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
